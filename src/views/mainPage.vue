@@ -13,7 +13,7 @@
             <ion-label>Vendu</ion-label>
           </ion-tab-button>
   
-          <ion-tab-button tab="tab3" href="/tabs/tab3">
+          <ion-tab-button tab="tab3" href="/main/achats">
             <ion-icon aria-hidden="true" :icon="square" />
             <ion-label>Achats</ion-label>
           </ion-tab-button>
