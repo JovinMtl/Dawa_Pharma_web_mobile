@@ -6,9 +6,14 @@
         <ion-buttons>
             <ion-button style="position: absolute; 
                 font-size: larger; top: -3vh;
+                left: 60%;">
+                <ion-icon :src="calendarOutlinea"></ion-icon>
+            </ion-button>
+            <ion-button style="position: absolute; 
+                font-size: larger; top: -3vh;
                 left: 80%;">
-                <ion-icon :src="sparklesOutline" ></ion-icon>
-                </ion-button>
+                <ion-icon :src="sparklesOutline"></ion-icon>
+            </ion-button>
             <!-- <ion-icon :src="sparklesOutline" 
                 style="position: absolute; 
                 font-size: larger; top: -3vh;
@@ -102,7 +107,9 @@ import {
     IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
     IonIcon, IonButtons, IonButton
 } from '@ionic/vue';
-import { sparklesOutline } from 'ionicons/icons'
+import { 
+    sparklesOutline, todayOutline, calendarOutline
+} from 'ionicons/icons'
 
 
 import { useKuvoma } from '../hooks/kuvoma.js'
@@ -115,6 +122,7 @@ const pv_t = ref(0)
 const ben_t = ref(0)
 
 const suggest_url = 'api/rep/workOn35/'
+const suggest2_url = 'api/rep/beneficeEval/'
 const [dispo, kuvoma_function] = useKuvoma(suggest_url)
 
 const totaux_function = ()=>{
