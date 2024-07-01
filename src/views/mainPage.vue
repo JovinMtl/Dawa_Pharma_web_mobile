@@ -18,7 +18,7 @@
             <ion-label>Achats</ion-label>
           </ion-tab-button>
   
-          <ion-tab-button tab="tab4" href="/tabs/tab4">
+          <ion-tab-button tab="tab4" href="/main/rotation">
             <ion-icon aria-hidden="true" :icon="addOutline" />
             <ion-label>Rotation</ion-label>
           </ion-tab-button>
