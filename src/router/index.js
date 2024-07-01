@@ -5,11 +5,12 @@ import disponible from '../views/operations/output/disponible.vue'
 import Logi from '../views/auth/login.vue'
 import Invita from '../views/layout/auxiliare/invita.vue'
 // import { components } from 'vuetify/dist/vuetify-labs.js';
+import mainpage from '../views/mainPage.vue'
 
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/main'
   },
   {
     path : '/home',
@@ -26,6 +27,10 @@ const routes = [
   {
     path : '/invite',
     component: Invita
+  },
+  {
+    path: '/main',
+    component: mainpage
   }
 ]
 
