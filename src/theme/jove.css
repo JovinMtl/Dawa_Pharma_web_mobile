@@ -1,0 +1,109 @@
+
+
+ion-page{
+    /* background: linear-gradient(to right, rgb(11, 245, 11),rgba(11, 245, 11, 0.644), rgba(11, 245, 11, 0.486));
+    overflow: hidden; */
+}
+body {
+    --s: 75px; /* control the size*/
+    --c1: #f7d2a1;
+    --c2: #09791b;
+    
+    --_g: 
+       var(--c1) 0%  5% ,var(--c2) 6%  15%,var(--c1) 16% 25%,var(--c2) 26% 35%,var(--c1) 36% 45%,
+       var(--c2) 46% 55%,var(--c1) 56% 65%,var(--c2) 66% 75%,var(--c1) 76% 85%,var(--c2) 86% 95%,
+       #0000 96%;
+    background:
+      radial-gradient(50% 50% at 100% 0,var(--_g)),
+      radial-gradient(50% 50% at 0 100%,var(--_g)),
+      radial-gradient(50% 50%,var(--_g)),
+      radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
+      var(--c1);
+    background-size: var(--s) var(--s);
+  }
+.mainContainer{
+    display: inline-flex;
+    background-color: rgba(255, 255, 255, 0.589);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.589),rgba(255, 255, 255, 0.381), rgba(255, 255, 255, 0.437));
+    width: 89vw;
+    height: 90vh;
+    position: relative;
+    /* position: absolute; */
+    left: 10vw;
+    left: 11.5vw;
+    top: 6vh;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    padding-left: 1vw;
+    /* overflow: hidden; */
+}
+
+.sectA{
+    width: 77%;
+    height: 98.4%;
+    overflow: auto;
+    margin-top: 5px;
+    padding-top: 1vw;
+
+}
+.sectB{
+    width: 23%;
+    height: 100%;
+    background-color: rgba(11, 245, 11, 0.384);
+    border-top: 8px dotted rgba(255, 255, 255, 0.589);
+}
+.signeRecherche{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(63, 60, 60);
+    position: absolute;
+    border-radius: 5px;
+    display: none;
+}
+
+.searchBar{
+    position: absolute;
+    top: -5vh;
+    /* top: -8vh; */
+    left: 3vw;
+}
+.menuBar{
+    position: absolute;
+    top: -30px;
+    left: 33vw;
+}
+
+.closeBtn{
+    /* position: absolute;  */
+    left: 88%; 
+    left: 71%; 
+    top: 10px; 
+    font-size: 2rem;
+    position: fixed; 
+    top: 0px;
+}
+.closeBtne{
+  position: absolute; 
+  left: 88%; 
+  /* left: 71%;  */
+  top: 10px; 
+  font-size: 2rem;
+  position: fixed; 
+  /* top: 0px; */
+}
+.notif{
+  position: absolute; 
+  width: 500px;
+  height: 10rem; 
+  /* background-color: #85f786; */
+  /* background-color: #bef9bf; */
+  background-color: white;
+  left:30vw;
+  top: 30vh;
+  align-content: center;
+  text-align: center;
+  font-size: 1.6rem;
+  color: red;
+  font-weight: 500;
+  box-shadow: 0 0 35px white;
+}
