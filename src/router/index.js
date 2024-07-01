@@ -41,10 +41,10 @@ const routes = [
         path: 'dispo',
         component: page1
       },
-      // {
-      //   path: 'vendu',
-      //   component: () => import('@/views/Tab2Page.vue')
-      // },
+      {
+        path: 'vendu',
+        component: () => import('../views/pages/page2.vue')
+      },
     ]
   },
 ]
