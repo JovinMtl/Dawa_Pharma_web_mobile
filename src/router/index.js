@@ -49,6 +49,10 @@ const routes = [
         path: 'achats',
         component: () => import('../views/pages/page3.vue')
       },
+      {
+        path: 'rotation',
+        component: () => import('../views/pages/page4.vue')
+      },
     ]
   },
 ]
