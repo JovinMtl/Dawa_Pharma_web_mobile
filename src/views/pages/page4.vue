@@ -9,6 +9,7 @@
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Tab 4e</ion-title>
+          <ion-icon></ion-icon>
         </ion-toolbar>
       </ion-header>
 
@@ -86,7 +87,10 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { 
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
+    IonIcon
+} from '@ionic/vue';
 
 
 import { useKuvoma } from '../hooks/kuvoma.js'
