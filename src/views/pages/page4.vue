@@ -4,11 +4,16 @@
       <ion-toolbar>
         <ion-title>Tab 4</ion-title>
         <ion-buttons>
-            <ion-icon :src="sparklesOutline" 
+            <ion-button style="position: absolute; 
+                font-size: larger; top: -3vh;
+                left: 80%;">
+                <ion-icon :src="sparklesOutline" ></ion-icon>
+                </ion-button>
+            <!-- <ion-icon :src="sparklesOutline" 
                 style="position: absolute; 
                 font-size: larger; top: -3vh;
                 left: 90%;">
-            </ion-icon>
+            </ion-icon> -->
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
@@ -95,7 +100,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { 
     IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
-    IonIcon, IonButtons
+    IonIcon, IonButtons, IonButton
 } from '@ionic/vue';
 import { sparklesOutline } from 'ionicons/icons'
 
