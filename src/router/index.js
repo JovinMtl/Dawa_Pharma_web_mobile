@@ -6,6 +6,7 @@ import Logi from '../views/auth/login.vue'
 import Invita from '../views/layout/auxiliare/invita.vue'
 // import { components } from 'vuetify/dist/vuetify-labs.js';
 import mainpage from '../views/mainPage.vue'
+import page1 from '../views/pages/page1.vue'
 
 const routes = [
   {
@@ -29,9 +30,23 @@ const routes = [
     component: Invita
   },
   {
-    path: '/main',
-    component: mainpage
-  }
+    path: '/main/',
+    component: mainpage,
+    children: [
+      {
+        path: '',
+        redirect: '/main/dispo'
+      },
+      {
+        path: 'dispo',
+        component: page1
+      },
+      // {
+      //   path: 'vendu',
+      //   component: () => import('@/views/Tab2Page.vue')
+      // },
+    ]
+  },
 ]
 
 const router = createRouter({
