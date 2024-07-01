@@ -3,13 +3,19 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Tab 4</ion-title>
+        <ion-buttons>
+            <ion-icon :src="sparklesOutline" 
+                style="position: absolute; 
+                font-size: larger; top: -3vh;
+                left: 90%;">
+            </ion-icon>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Tab 4e</ion-title>
-          <ion-icon></ion-icon>
         </ion-toolbar>
       </ion-header>
 
@@ -89,8 +95,9 @@
 import { onMounted, ref, watch } from 'vue'
 import { 
     IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
-    IonIcon
+    IonIcon, IonButtons
 } from '@ionic/vue';
+import { sparklesOutline } from 'ionicons/icons'
 
 
 import { useKuvoma } from '../hooks/kuvoma.js'
