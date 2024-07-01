@@ -6,8 +6,13 @@
         <ion-buttons>
             <ion-button style="position: absolute; 
                 font-size: larger; top: -3vh;
+                left: 40%;">
+                <ion-icon :src="todayOutline"></ion-icon>
+            </ion-button>
+            <ion-button style="position: absolute; 
+                font-size: larger; top: -3vh;
                 left: 60%;">
-                <ion-icon :src="calendarOutlinea"></ion-icon>
+                <ion-icon :src="calendarOutline"></ion-icon>
             </ion-button>
             <ion-button style="position: absolute; 
                 font-size: larger; top: -3vh;
