@@ -2,20 +2,20 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 4</ion-title>
+        <ion-title>Suggestions</ion-title>
         <ion-buttons>
             <ion-button style="position: absolute; 
-                font-size: larger; top: -3vh;
+                font-size: larger; top: -4vh;
                 left: 40%;">
                 <ion-icon :src="todayOutline"></ion-icon>
             </ion-button>
             <ion-button style="position: absolute; 
-                font-size: larger; top: -3vh;
+                font-size: larger; top: -4vh;
                 left: 60%;">
                 <ion-icon :src="calendarOutline"></ion-icon>
             </ion-button>
             <ion-button style="position: absolute; 
-                font-size: larger; top: -3vh;
+                font-size: larger; top: -4vh;
                 left: 80%;">
                 <ion-icon :src="sparklesOutline"></ion-icon>
             </ion-button>
