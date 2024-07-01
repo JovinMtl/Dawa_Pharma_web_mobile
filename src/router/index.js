@@ -4,7 +4,7 @@ import page from '../views/layout/page.vue'
 import disponible from '../views/operations/output/disponible.vue'
 import Logi from '../views/auth/login.vue'
 import Invita from '../views/layout/auxiliare/invita.vue'
-import { components } from 'vuetify/dist/vuetify-labs.js';
+// import { components } from 'vuetify/dist/vuetify-labs.js';
 
 const routes = [
   {
