@@ -4,9 +4,15 @@
       <ion-toolbar>
         <ion-title>Suggestions</ion-title>
         <ion-buttons>
+            <ion-datetime-button ref="dateJove" datetime="datetime"  
+            ></ion-datetime-button>
+            <ion-modal :keep-contents-mounted="true">
+                <ion-datetime id="datetime" slot="date-target"></ion-datetime>
+            </ion-modal>
+
             <ion-button style="position: absolute; 
                 font-size: larger; top: -4vh;
-                left: 40%;">
+                left: 40%;" @click="openDate">
                 <ion-icon :src="todayOutline"></ion-icon>
             </ion-button>
             <ion-button style="position: absolute; 
@@ -112,6 +118,7 @@ import {
     IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
     IonIcon, IonButtons, IonButton
 } from '@ionic/vue';
+import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
 import { 
     sparklesOutline, todayOutline, calendarOutline
 } from 'ionicons/icons'
@@ -125,11 +132,20 @@ const qte_t = ref(0)
 const pa_t = ref(0)
 const pv_t = ref(0)
 const ben_t = ref(0)
+const dateJove = ref(null)
 
 const suggest_url = 'api/rep/workOn35/'
 const suggest2_url = 'api/rep/beneficeEval/'
 const [dispo, kuvoma_function] = useKuvoma(suggest_url)
 
+const openDate = ()=>{
+    // attempting to open date
+    const dateElement = document.getElementById('date-button')
+    // console.log("Now the date element is : ", dateJove.value.firstChild.click())
+    // dateJove.value.firstChild.firstChild.click()
+    // dateElement.click()
+    console.log("THe content is: ", dateElement.innerHTML)
+}
 const totaux_function = ()=>{
   let qte = 0
   let pa = 0

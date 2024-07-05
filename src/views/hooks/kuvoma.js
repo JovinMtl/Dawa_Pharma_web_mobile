@@ -1,5 +1,6 @@
 
 import { ref, watch } from 'vue'
+import { baseURL } from '../hooks/host'
 
 
 export function useKuvoma(prefix){
@@ -7,10 +8,10 @@ export function useKuvoma(prefix){
 
     const kuvomaImiti = async () => {
         // const base = '//127.0.0.1:8002'
-        const base = '//muteule.pythonanywhere.com'
+        // const base = '//muteule.pythonanywhere.com'
 
         try {
-            const response = await fetch(`${base}/${prefix}`)
+            const response = await fetch(`${baseURL}/${prefix}`)
             
             if (response.ok){
                 data.value = await response.json()
@@ -54,7 +55,7 @@ export function useKurungika(imitiArray, prefix,
             console.log("prefix dukorerako: ", prefix)
     
             try {
-                const response = await fetch(`${base}/${prefix}`,{
+                const response = await fetch(`${baseURL}/${prefix}`,{
                     method: 'POST',
                     headers:{
                         'Content-type': 'application/json'
@@ -89,7 +90,7 @@ export async function useNoteUmuti(value){
     console.log("Using umuti_new as: ", value)
 
     try {
-        const response = await fetch(`${base}/${prefix}`,{
+        const response = await fetch(`${baseURL}/${prefix}`,{
             method: 'POST',
             headers:{
                 'Content-type': 'application/json'
