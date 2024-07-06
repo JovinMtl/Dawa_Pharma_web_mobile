@@ -1,17 +1,23 @@
 
 import { ref, watch } from 'vue'
-import { baseURL } from '../hooks/host'
+import { baseURL } from '../../store/host'
+import { useUserStore} from '../../store/user'
 
 
 export function useKuvoma(prefix){
     const data = ref(null)
+    const { getAccessToken } = useUserStore()
 
     const kuvomaImiti = async () => {
         // const base = '//127.0.0.1:8002'
         // const base = '//muteule.pythonanywhere.com'
 
         try {
-            const response = await fetch(`${baseURL}/${prefix}`)
+            const response = await fetch(`${baseURL}/${prefix}`,{
+                headers: {
+                    Authorization: 'Bearer ' + getAccessToken()
+                }
+            })
             
             if (response.ok){
                 data.value = await response.json()
