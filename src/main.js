@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
+import { createPinia } from 'pinia'
+// import { createRouter} from 'vue-router'
 
 import { IonicVue } from '@ionic/vue';
 // import Vuetify from 'vuetify/lib';
@@ -37,10 +39,12 @@ import './theme/variables.css';
 import './theme/jove.css';
 
 // const vuetify = new Vuetify();
+const pinia = createPinia()
 
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
+  .use(pinia)
   // .use(vuetify);
 
 router.isReady().then(() => {

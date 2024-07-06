@@ -11,7 +11,7 @@ import page1 from '../views/pages/page1.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/main'
+    redirect: '/login'
   },
   {
     path : '/home',
@@ -22,7 +22,7 @@ const routes = [
     component: disponible
   },
   {
-    path : '/logi',
+    path : '/login',
     component: Logi,
   },
   {
