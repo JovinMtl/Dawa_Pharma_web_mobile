@@ -34,7 +34,7 @@
               </div>
             </div>
   
-            <div class="element2" style="background-color: white; width: 100%; height: 91%; 
+            <div class="element2" style="background-color: white; width: 100%; height: 80%; 
               color: #000;overflow: auto;">
               <div v-for="med in disponible" class="element1" style="display: flex;width: 100%; height: 25px;
                    ">
