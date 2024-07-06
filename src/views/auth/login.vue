@@ -30,19 +30,16 @@
     </ion-page>
 </template>
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { 
     IonContent, IonPage
 } from '@ionic/vue';
-// import { useStore } from 'vuex'
-import { useUserStore } from '../../store/user.js'
+import { useUserStore } from '../../store/user'
 import { baseURL } from '../../store/host'
-import axios from 'axios'
 
 const store = useUserStore()
-const {getUsername,getAccessToken,getRefreshToken,
-    setUsername,setAccessToken, setRefreshToken} = store
+const {setUsername,setAccessToken, setRefreshToken} = store
 const router = useRouter()
 const username = ref(null)
 const password = ref(null)
@@ -50,40 +47,39 @@ const password = ref(null)
 let logs = ''
 
 
-const axiosInstance = axios.create({
-  baseURL: '//127.0.0.1:8002', // Base URL for your API
-  headers: {
-    'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Add your authorization token here
-  }
-});
-
-const login_hook = ()=>{
-    const base = '//127.0.0.1:8002'
-    const prefix = "api/login/"
-
-    axios.post(`${baseURL}/${prefix}`,{"username": username.value,
-        "password":password.value}
-       ).then((response) => {
-        setUsername(username.value)
-        setAccessToken(response.data.access)
-        setRefreshToken(response.data.refresh)
-        localStorage.setItem('username', username.value)
-        localStorage.setItem('accessToken', response.data.access)
-        localStorage.setItem('refreshToken', response.data.refresh)
-        // hide_authe()
-        router.push('/home')
-       }).catch((error) => {
-         logs = error.response.data
-       })
+const login_hook = async ()=>{
+    const endpoint = "api/login/"
+    console.log("Start logging in...")
+    try {
+        const response = await fetch(`${baseURL}/${endpoint}`,{
+            method: 'POST',
+            headers: {
+                'Content-type' : 'application/json',
+                // Authorization : 'Bearer ' + getAccessToken()
+            },
+            body: JSON.stringify({
+                "username": username.value,
+                "password":password.value
+            })
+        })
+        const server_data = await response.json()
+        if(response.ok){
+            console.log("The response is: ", server_data)
+            setUsername(username.value)
+            setAccessToken(server_data.access)
+            setRefreshToken(server_data.refresh)
+            localStorage.setItem('username', username.value)
+            localStorage.setItem('accessToken', server_data.access)
+            localStorage.setItem('refreshToken', server_data.refresh)
+            console.log("THings are well")
+            router.push('/main/dispo')
+        } else {
+            console.log("The response hasn't reached here yet")
+        }
+    } catch (value){
+        logs = value
+    }
 }
-// const hide_authe = ()=>{
-//     const container = document.getElementById('authe')
-//     container.style.display = 'none'
-// }
-
-// watch(data, (value)=>{
-//     console.log("The LOGIN component got: ", value)
-// })
 </script>
 <style scoped lang="scss">
 @media screen and (max-width: 400px) {
