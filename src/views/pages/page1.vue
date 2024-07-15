@@ -34,9 +34,8 @@
               </div>
             </div>
   
-            <div class="element2" style="background-color: white; width: 100%; height: 80%; 
-              color: #000;overflow: auto;">
-              <div v-for="med in disponible" class="element1" style="display: flex;width: 100%; height: 25px;
+            <div class="element2 gestyle">
+              <div v-for="med in disponible" class="element1 bg1" style="display: flex;width: 100%; height: 25px;
                    ">
                 <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
                   {{ (med.name_umuti).slice(0,8) }}
