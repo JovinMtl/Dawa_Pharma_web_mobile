@@ -60,8 +60,9 @@
   
             <div class="element2" style="position: fixed;width: 99%; height: 5%; color: #000; top: 87.5vh;
                 ">
-              <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: center;background-color: #fff;">
-                <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
+              <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: left;background-color: #fff;">
+                <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;
+                      text-align: center;">
                   Total
                 </div>
                 <div class="elem2" style="width: 10%; height: 100%; border: 1px solid black; color: #000;">
