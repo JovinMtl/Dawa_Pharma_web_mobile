@@ -58,8 +58,9 @@
               </div>
             </div>
   
-            <div class="element2" style="width: 100%; height: 5%; color: #000;">
-              <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: center;">
+            <div class="element2" style="position: fixed;width: 100%; height: 5%; color: #000; top: 87.5vh;
+                ">
+              <div class="element1" style="display: flex;width: 100%; height: 25px; text-align: center;background-color: #fff;">
                 <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">
                   Total
                 </div>
@@ -78,7 +79,8 @@
               </div>
             </div>
            </div>
-           <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px"></div>
+           <div class="content3" style="background-color: greenyellow; width: 100%; height: 4px;"></div>
+           <div class="content4" style="background-color: greenyellow; width: 100%; height: 6vh"></div>
         </div>
         
       </ion-content>
