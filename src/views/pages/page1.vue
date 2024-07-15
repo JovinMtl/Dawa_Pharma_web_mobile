@@ -37,7 +37,7 @@
             <div class="element2 gestyle">
               <div v-for="(med, index) in disponible" 
                 class="element1"
-                :class=" index % 2 == 1 ? 'b2': 'bg1'" 
+                :class=" index % 2 == 0 ? 'bg2': 'bg1'" 
                 style="display: flex;width: 100%; height: 25px;
                    ">
                 <div class="elem1" style="width: 30%; height: 100%; border: 1px solid black; color: #000;">

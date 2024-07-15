@@ -112,8 +112,8 @@ body {
     color: #000;overflow: auto;
 }
 .bg1{
-    background-color: hsl(150, 60%, 40%);
+    background-color: rgba(189, 181, 181, 0.945);
 }
 .bg2{
-    background-color: hsl(250, 60%, 40%);
+    background-color: #4e4e4e;
 }
