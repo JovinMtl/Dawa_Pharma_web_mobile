@@ -4,16 +4,16 @@ import { baseURL } from '../../store/host'
 import { useUserStore} from '../../store/user'
 
 
-export function useKuvoma(prefix){
+export function useKuvoma(prefix, page_number=0){
     const data = ref(null)
     const { getAccessToken } = useUserStore()
 
     const kuvomaImiti = async () => {
-        // const base = '//127.0.0.1:8002'
-        // const base = '//muteule.pythonanywhere.com'
+        // const data = { page: 1, limit: 10 };
+        // const queryParams = new URLSearchParams(data).toString();
 
         try {
-            const response = await fetch(`${baseURL}/${prefix}`,{
+            const response = await fetch(`${baseURL}/${prefix}?page=${page_number}`,{
                 headers: {
                     Authorization: 'Bearer ' + getAccessToken()
                 }

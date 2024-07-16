@@ -101,7 +101,8 @@
   const ben_t = ref(0)
   
   const url_kuvoma = 'api/out/dispo/'
-  const [dispo, kuvoma_function] = useKuvoma(url_kuvoma)
+  let page_number = 1
+  const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number)
   
   const totaux_function = ()=>{
     let qte = 0
@@ -126,7 +127,7 @@
   
   watch(dispo, (value)=>{
     console.log("Dispo changed into :", value)
-    disponible.value = value
+    disponible.value = value.data
     totaux_function()
   })
   </script>
