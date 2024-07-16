@@ -128,7 +128,11 @@
   watch(dispo, (value)=>{
     console.log("Dispo changed into :", value)
     disponible.value = value.data
-    totaux_function()
+    qte_t.value = value.syntesis.qte
+    pa_t.value = value.syntesis.pa_t
+    pv_t.value = value.syntesis.pv_t
+    ben_t.value = value.syntesis.benefice
+    // totaux_function()
   })
   </script>
   
