@@ -102,15 +102,14 @@
   const pa_t = ref(0)
   const pv_t = ref(0)
   const ben_t = ref(0)
-  const need_fetch = ref(true)
   
   const url_kuvoma = 'api/out/dispo/'
   const page_number = ref(1)
   // before calling the composable, first check its availability in the store.
   // if(getPagedImiti(page_number))
-  if(need_fetch.value){
-    const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number.value)
-  }
+ 
+  const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number.value)
+ 
   
   
   const totaux_function = ()=>{
@@ -138,7 +137,7 @@
     if(is_Stored(value)){
       disponible.value = getPagedImiti(value)
     } else{
-      need_fetch.value = true
+      kuvoma_function()
     }
   })
   watch(dispo, (value)=>{
@@ -148,7 +147,8 @@
     pa_t.value = value.syntesis.pa_t
     pv_t.value = value.syntesis.pv_t
     ben_t.value = value.syntesis.benefice
-    // totaux_function()
+    // adding in the store
+    addPagedImiti(value.syntesis.page_number, value.data)
   })
   </script>
   
