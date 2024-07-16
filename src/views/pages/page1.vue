@@ -92,17 +92,26 @@
   import { onMounted, ref, watch } from 'vue'
   import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
   import { useKuvoma } from '../hooks/kuvoma.js'
-  
+  import { useImitiSetStore } from '../../store/imitiset'
+
+
+  const { is_Stored, getPagedImiti, addPagedImiti } = useImitiSetStore()
   const disponible = ref(null)
   const totaux = ref(null)
   const qte_t = ref(0)
   const pa_t = ref(0)
   const pv_t = ref(0)
   const ben_t = ref(0)
+  const need_fetch = ref(true)
   
   const url_kuvoma = 'api/out/dispo/'
-  let page_number = 1
-  const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number)
+  const page_number = ref(1)
+  // before calling the composable, first check its availability in the store.
+  // if(getPagedImiti(page_number))
+  if(need_fetch.value){
+    const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number.value)
+  }
+  
   
   const totaux_function = ()=>{
     let qte = 0
@@ -125,6 +134,13 @@
     kuvoma_function()
   })
   
+  watch(page_number, (value)=>{
+    if(is_Stored(value)){
+      disponible.value = getPagedImiti(value)
+    } else{
+      need_fetch.value = true
+    }
+  })
   watch(dispo, (value)=>{
     console.log("Dispo changed into :", value)
     disponible.value = value.data

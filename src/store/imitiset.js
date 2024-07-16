@@ -8,6 +8,13 @@ export const useImitiSetStore = defineStore('imitiSet', ()=>{
     const acquired_imiti = ref([])
 
 
+    const is_Stored = (page)=>{
+        if(page_numbers.includes(page)){
+            return 1
+        } else{
+            return 0
+        }
+    }
     const getPagedImiti = (page)=>{
         if(page_numbers.includes(page)){
             return acquired_imiti.value[page]
@@ -28,7 +35,7 @@ export const useImitiSetStore = defineStore('imitiSet', ()=>{
     
 
     return {
-        getPagedImiti, addPagedImiti
+        is_Stored, getPagedImiti, addPagedImiti
     }
 })
 
