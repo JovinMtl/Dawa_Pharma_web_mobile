@@ -105,29 +105,9 @@
   
   const url_kuvoma = 'api/out/dispo/'
   const page_number = ref(1)
-  // before calling the composable, first check its availability in the store.
-  // if(getPagedImiti(page_number))
- 
+  // before calling the composable, first check its availability in the store. 
   const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number.value)
  
-  
-  
-  const totaux_function = ()=>{
-    let qte = 0
-    let pa = 0
-    let pv = 0
-  
-    disponible.value.forEach(element => {
-      qte += element.quantite_restant
-      pa += element.price_in * element.quantite_restant
-      pv += element.price_out * element.quantite_restant
-    });
-  
-    qte_t.value = qte
-    pa_t.value = pa
-    pv_t.value = pv
-    ben_t.value = pv - pa
-  }
   
   onMounted(()=>{
     kuvoma_function()
