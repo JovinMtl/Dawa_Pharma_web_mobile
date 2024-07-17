@@ -146,16 +146,7 @@
   const ben_t = ref(0)
   const manDateTime = ref(null)
 
-  const turnDate = (event)=>{
-    const ele = event.target.parentNode
-    console.log("the content: ", ele.textContent)
-    const elem = document.querySelector('.manDate')
-    // document.getElementById('open-modal').click();
-    // elem.style.display = 'block'
-    const dateInput = document.getElementById('date-button');
-    // dateInput.style.display = 'block';
-    // dateInput.click();
-    // ele.click()
+  const turnDate = ()=>{
     manDateTime.value.firstChild.shadowRoot.firstChild.click()
     console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
   }
@@ -191,7 +182,7 @@
   
   <style scoped>
   .manDate{
-    /* display: none; */
+    display: none;
     /* position: relative;
     top: 150px; */
   }
