@@ -15,7 +15,7 @@
             <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
             <ion-modal :keep-contents-mounted="true">
-              <ion-datetime id="datetime"></ion-datetime>
+              <ion-datetime v-model="date1" id="datetime"></ion-datetime>
             </ion-modal>
           </div>
           <div class="dateControl" @click="turnDate">
@@ -144,11 +144,13 @@
   const pa_t = ref(0)
   const pv_t = ref(0)
   const ben_t = ref(0)
+  const date1 = ref(null)
   const manDateTime = ref(null)
 
   const turnDate = ()=>{
     manDateTime.value.firstChild.shadowRoot.firstChild.click()
     console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
+    console.log("The date gotten : ", date1.value)
   }
   
   const url_kuvoma = 'api/out/dispo/'
@@ -160,7 +162,9 @@
   onMounted(()=>{
     kuvoma_function()
   })
-  
+  watch(date1, (value)=>{
+    console.log("The date gotten by watch : ", value)
+  })
   watch(page_number, (value)=>{
     if(is_Stored(value)){
       disponible.value = getPagedImiti(value)
