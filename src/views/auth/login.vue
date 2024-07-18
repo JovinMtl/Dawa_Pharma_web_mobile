@@ -176,6 +176,10 @@ const login_hook = async ()=>{
             .username{
                 width: 100%;
                 margin: 0 auto;
+                margin-bottom: .7rem;
+            }
+            .confirmationContainer{
+                margin-top: 1.2rem;
             }
         }
     }
