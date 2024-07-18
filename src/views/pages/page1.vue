@@ -35,7 +35,7 @@
           <div class="cherc inTitle">
             <ion-input placeholder="tapez"></ion-input>
           </div>
-          <div class="cherc inTitle">
+          <div class="cherc inTitle" @click="search">
             <ion-icon :icon="searchOutline" style="font-size: 2rem;
           font-weight: 700;">
           </ion-icon>
@@ -158,7 +158,10 @@
   // before calling the composable, first check its availability in the store. 
   const [dispo, kuvoma_function] = useKuvoma(url_kuvoma, page_number.value)
  
-  
+  const search = ()=>{
+    // should send a request to the server according to dates and input
+    //  or filter based on dates provided
+  }
   onMounted(()=>{
     kuvoma_function()
   })
