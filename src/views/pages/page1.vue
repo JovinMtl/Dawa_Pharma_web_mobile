@@ -163,6 +163,7 @@
   const search = ()=>{
     // should send a request to the server according to dates and input
     //  or filter based on dates provided
+    console.log("THe date : ", getDate1())
   }
   onMounted(()=>{
     kuvoma_function()
