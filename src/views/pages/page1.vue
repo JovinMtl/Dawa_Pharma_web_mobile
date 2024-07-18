@@ -135,6 +135,7 @@
    } from 'ionicons/icons'
   import { useKuvoma } from '../hooks/kuvoma.js'
   import { useImitiSetStore } from '../../store/imitiset'
+  import { useDateStore } from '../../store/dates'
 
 
   const { is_Stored, getPagedImiti, addPagedImiti } = useImitiSetStore()
@@ -146,6 +147,7 @@
   const ben_t = ref(0)
   const date1 = ref(null)
   const manDateTime = ref(null)
+  const { getDate1, getDate2, setDate1, setDate2  } = useDateStore()
 
   const turnDate = ()=>{
     manDateTime.value.firstChild.shadowRoot.firstChild.click()
