@@ -82,12 +82,8 @@ const login_hook = async ()=>{
 }
 </script>
 <style scoped lang="scss">
-@media screen and (max-width: 400px) {
-    .LogContainer{
-        background-color: white;
-    }
-}
-@media screen and (min-width: 800px) {
+
+// @media screen and (min-width: 800px) {
     .LogContainer{
         display: flex;
         width: 100%;
@@ -169,5 +165,14 @@ const login_hook = async ()=>{
             }
         }
     }
+// }
+@media screen and (max-width: 400px) {
+    .LogContainer{
+
+        .authentif{
+            width: 90%;
+        }
+    }
+
 }
 </style>
