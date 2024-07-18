@@ -166,11 +166,17 @@ const login_hook = async ()=>{
         }
     }
 // }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
     .LogContainer{
 
         .authentif{
             width: 90%;
+            flex-wrap: wrap;
+
+            .username{
+                width: 100%;
+                margin: 0 auto;
+            }
         }
     }
 
