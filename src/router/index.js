@@ -52,6 +52,9 @@ const routes = [
       {
         path: 'rotation',
         component: () => import('../views/pages/page4.vue')
+      },{
+        path: 'plus',
+        component: () => import('../views/pages/page5.vue')
       },
     ]
   },
