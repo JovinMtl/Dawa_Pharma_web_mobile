@@ -2,48 +2,17 @@
     <ion-page>
       <ion-header style="display: flex; background-color: black; width: 100%; height: 5vh;
       align-items: center; padding: 10px;">
-        <div class="icon1 inTitle" >
-          <ion-icon :icon="chevronBackOutline" style="font-size: 2.5rem;
-          font-weight: 900; margin: 0 10px;"></ion-icon>
-        </div>
-        <div class="title inTitle">
-           Filtrer
-        </div>
-        <div class="cherc inTitle">
-          
-          <div ref="manDateTime" class="manDate">
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-
-            <ion-modal :keep-contents-mounted="true">
-              <ion-datetime v-model="date1" id="datetime"></ion-datetime>
-            </ion-modal>
-          </div>
-          <div class="dateControl" @click="turnDate">
-            <ion-icon :icon="calendarClearOutline" style="font-size: 1.8rem;
-            font-weight: 700; margin: 0 10px;">
-            </ion-icon>
-          </div>
-          
-        </div>
-        
-          <div class="cherc inTitle">
-            <ion-icon :icon="calendarOutline" style="font-size: 2rem;
-          font-weight: 700; margin: 0 10px;">
-          </ion-icon>
-          </div>
-          
-          <div class="cherc inTitle">
-            <ion-input placeholder="tapez"></ion-input>
-          </div>
-          <div class="cherc inTitle" @click="search">
-            <ion-icon :icon="searchOutline" style="font-size: 2rem;
-          font-weight: 700;">
-          </ion-icon>
-          </div>
-          
-          <ion-icon :icon="chevronForwardOutline" style="font-size: 2.5rem;
-          font-weight: 900; margin: 0 10px;"></ion-icon>
-          
+        <!-- <div class="circlesMenu" style="text-align: center; 
+                justify-content: center; align-items: center; padding-top: 15%"> -->
+            <div class="mainContainerCircle">
+                <!-- Here are the circles -->
+                <div class="item violet" @click="getLowStock"></div>
+                <div class="item yellow" @click="getEndStock"></div>
+                <div class="item red" @click="getOutDate"></div>
+                <div class="item black" @click="getAllFine"></div>
+            </div>
+        <!-- </div> -->
+    
       </ion-header>
       <ion-content>
         <div class="page1Container" style="width: 100%; height: 100%; overflow: hidden;">
@@ -191,6 +160,50 @@
   </script>
   
   <style scoped>
+  .circlesMenu{
+    display: block;
+    background-color: transparent; 
+    width: 100%;height: 20%; 
+    padding: 5px 5px; 
+    border-bottom: 2px solid white;
+}
+  .mainContainerCircle{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* background: #333; */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-auto-rows: 20px;
+    justify-items: center;
+}
+.item{
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+}
+.item:active{
+    background-color: transparent;
+    scale: 1.4;
+}
+.black{
+    background-color: white;
+    border: 2px solid white;
+}
+.yellow{
+    background-color: rgb(117, 9, 206);
+    box-shadow: 0 0 10px greenyellow;
+    border: 2px solid rgb(117, 9, 206);
+}
+.violet{
+    background-color: rgb(12, 124, 216);
+    border: 2px solid rgb(12, 124, 216);
+}
+.red{
+    background-color: rgb(206, 9, 35);
+    border: 2px solid rgb(206, 9, 35);
+}
   .manDate{
     display: none;
     /* position: relative;
