@@ -108,22 +108,28 @@
 
 
   const { is_Stored, getPagedImiti, addPagedImiti } = useImitiSetStore()
-  const disponible = ref(null)
+  const disponible = ref([])
   const totaux = ref(null)
   const qte_t = ref(0)
   const pa_t = ref(0)
   const pv_t = ref(0)
   const ben_t = ref(0)
   const date1 = ref(null)
-  const manDateTime = ref(null)
-  const { getDate1, getDate2, setDate1, setDate2  } = useDateStore()
 
-  const turnDate = ()=>{
-    manDateTime.value.firstChild.shadowRoot.firstChild.click()
-    console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
-    console.log("The date gotten : ", date1.value)
-  }
+
   
+const allFine_url = 'api/rep/getAllFine/'
+const [allFine, getAllFine] = useKuvoma(allFine_url)
+
+const outDate_url = 'api/rep/getOutDate/'
+const [outDate, getOutDate] = useKuvoma(outDate_url)
+
+const endStock_url = 'api/rep/getEndStock/'
+const [endStock, getEndStock] = useKuvoma(endStock_url)
+
+const lowStock_url = 'api/rep/getLowStock/'
+const [lowStock, getLowStock] = useKuvoma(lowStock_url)
+
   const url_kuvoma = 'api/out/dispo/'
   const page_number = ref(1)
   // before calling the composable, first check its availability in the store. 
@@ -137,6 +143,41 @@
   onMounted(()=>{
     kuvoma_function()
   })
+
+  watch(allFine, (value)=>{
+    if(value.data == 'empty'){
+        console.log("It is empty")
+        disponible.value = []
+    }
+    else{
+        disponible.value = value
+    }})
+watch(outDate, (value)=>{
+    if(value.data == 'empty'){
+        console.log("It is empty")
+        disponible.value = []
+    }
+    else{
+        disponible.value = value
+    }})
+watch(endStock, (value)=>{
+    if(value.data == 'empty'){
+        console.log("It is empty")
+        disponible.value = []
+    }
+    else{
+        disponible.value = value
+    }})
+watch(lowStock, (value)=>{
+    if(value.data == 'empty'){
+        console.log("It is empty")
+        disponible.value = []
+    }
+    else{
+        disponible.value = value
+    }
+})
+
   watch(date1, (value)=>{
     console.log("The date gotten by watch : ", value)
   })
