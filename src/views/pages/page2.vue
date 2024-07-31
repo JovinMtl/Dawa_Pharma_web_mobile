@@ -52,7 +52,7 @@
                   {{ med.price_out }}
                 </div>
                 <div class="elem5" style="width: 20%; height: 100%; border: 1px solid black; color: #000;">
-                  {{ (Number(med.price_out) - Number(med.price_in)) * (Number(med.quantite_restant)) }}
+                  {{ med.difference }}
                 </div>
               </div>
             </div>
