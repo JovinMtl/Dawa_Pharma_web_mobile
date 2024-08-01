@@ -190,16 +190,3 @@
   })
   </script>
   
-  <style scoped>
-  .manDate{
-    display: none;
-    /* position: relative;
-    top: 150px; */
-  }
-  .title{
-    font-weight: 700;
-  }
-  .inTitle{
-    width: 15vw;
-  }
-  </style>
