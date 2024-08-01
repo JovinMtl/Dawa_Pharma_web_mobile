@@ -2,12 +2,8 @@
   <ion-page>
       <ion-header style="display: flex; background-color: black; width: 100%; height: 5vh;
       align-items: center; padding: 10px;">
-        <div class="icon1 inTitle" >
-          <ion-icon :icon="chevronBackOutline" style="font-size: 2.5rem;
-          font-weight: 900; margin: 0 10px;"></ion-icon>
-        </div>
-        <div class="title inTitle">
-           Filtrer
+        <div class="title w-30">
+          Suggestion
         </div>
         <div class="cherc inTitle">
           
