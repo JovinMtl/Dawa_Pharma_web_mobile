@@ -1,44 +1,51 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Suggestions</ion-title>
-        <ion-buttons>
-            <ion-datetime-button ref="dateJove" datetime="datetime"  
-            ></ion-datetime-button>
-            <ion-modal :keep-contents-mounted="true">
-                <ion-datetime id="datetime" slot="date-target"></ion-datetime>
-            </ion-modal>
+      <ion-header style="display: flex; background-color: black; width: 100%; height: 5vh;
+      align-items: center; padding: 10px;">
+        <div class="icon1 inTitle" >
+          <ion-icon :icon="chevronBackOutline" style="font-size: 2.5rem;
+          font-weight: 900; margin: 0 10px;"></ion-icon>
+        </div>
+        <div class="title inTitle">
+           Filtrer
+        </div>
+        <div class="cherc inTitle">
+          
+          <div ref="manDateTime" class="manDate">
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
-            <ion-button style="position: absolute; 
-                font-size: larger; top: -4vh;
-                left: 40%;" @click="openDate">
-                <ion-icon :src="todayOutline"></ion-icon>
-            </ion-button>
-            <ion-button style="position: absolute; 
-                font-size: larger; top: -4vh;
-                left: 60%;">
-                <ion-icon :src="calendarOutline"></ion-icon>
-            </ion-button>
-            <ion-button style="position: absolute; 
-                font-size: larger; top: -4vh;
-                left: 80%;">
-                <ion-icon :src="sparklesOutline"></ion-icon>
-            </ion-button>
-            <!-- <ion-icon :src="sparklesOutline" 
-                style="position: absolute; 
-                font-size: larger; top: -3vh;
-                left: 90%;">
-            </ion-icon> -->
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 4e</ion-title>
-        </ion-toolbar>
+            <ion-modal :keep-contents-mounted="true">
+              <ion-datetime v-model="date1" id="datetime"></ion-datetime>
+            </ion-modal>
+          </div>
+          <div class="dateControl" @click="turnDate">
+            <ion-icon :icon="calendarClearOutline" style="font-size: 1.8rem;
+            font-weight: 700; margin: 0 10px;">
+            </ion-icon>
+          </div>
+          
+        </div>
+        
+          <div class="cherc inTitle">
+            <ion-icon :icon="calendarOutline" style="font-size: 2rem;
+          font-weight: 700; margin: 0 10px;">
+          </ion-icon>
+          </div>
+          
+          <div class="cherc inTitle">
+            <ion-input placeholder="tapez"></ion-input>
+          </div>
+          <div class="cherc inTitle" @click="search">
+            <ion-icon :icon="searchOutline" style="font-size: 2rem;
+          font-weight: 700;">
+          </ion-icon>
+          </div>
+          
+          <ion-icon :icon="chevronForwardOutline" style="font-size: 2.5rem;
+          font-weight: 900; margin: 0 10px;"></ion-icon>
+          
       </ion-header>
+    <ion-content :fullscreen="true">
 
       <div class="page1Container" style="width: 100%; height: 100%; overflow: hidden;">
          <div class="content1" style="background-color: greenyellow; width: 100%; height: 4px">
@@ -114,17 +121,18 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import { 
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
-    IonIcon, IonButtons, IonButton
-} from '@ionic/vue';
-import { IonDatetime, IonDatetimeButton, IonModal } from '@ionic/vue';
-import { 
-    sparklesOutline, todayOutline, calendarOutline
-} from 'ionicons/icons'
+  import { 
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, 
+    IonIcon, IonInput, 
+    IonDatetime, IonDatetimeButton, IonModal,
+  } from '@ionic/vue';
+  import { chevronBackOutline, chevronForwardOutline,
+    calendarOutline, calendarClearOutline, searchOutline
+   } from 'ionicons/icons'
 
 
 import { useKuvoma } from '../hooks/kuvoma.js'
+  import { useDateStore } from '../../store/dates'
 
 const disponible = ref(null)
 const totaux = ref(null)
@@ -132,12 +140,20 @@ const qte_t = ref(0)
 const pa_t = ref(0)
 const pv_t = ref(0)
 const ben_t = ref(0)
-const dateJove = ref(null)
+  const date1 = ref(null)
+  const manDateTime = ref(null)
+  const { getDate1, getDate2, setDate1, setDate2  } = useDateStore()
 
 const suggest_url = 'api/rep/workOn35/'
 const suggest2_url = 'api/rep/beneficeEval/'
 const [dispo, kuvoma_function] = useKuvoma(suggest_url)
 
+
+const turnDate = ()=>{
+    manDateTime.value.firstChild.shadowRoot.firstChild.click()
+    console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
+    console.log("The date gotten : ", date1.value)
+  }
 const openDate = ()=>{
     // attempting to open date
     const dateElement = document.getElementById('date-button')
