@@ -24,21 +24,12 @@
         
           <div class="cherc inTitle">
             <ion-icon :icon="calendarOutline" style="font-size: 2rem;
-          font-weight: 700; margin: 0 10px;">
-          </ion-icon>
-          </div>
-          
-          <div class="cherc inTitle">
-            <ion-input placeholder="tapez"></ion-input>
-          </div>
-          <div class="cherc inTitle" @click="search">
-            <ion-icon :icon="searchOutline" style="font-size: 2rem;
-          font-weight: 700;">
+          font-weight: 700; margin: 0 2rem;">
           </ion-icon>
           </div>
           
           <ion-icon :icon="chevronForwardOutline" style="font-size: 2.5rem;
-          font-weight: 900; margin: 0 10px;"></ion-icon>
+          font-weight: 900; margin: 0 2rem;"></ion-icon>
           
       </ion-header>
     <ion-content :fullscreen="true">
