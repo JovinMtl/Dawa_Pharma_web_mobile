@@ -129,3 +129,15 @@ body {
   ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
   }
+
+  .manDate{
+    display: none;
+    /* position: relative;
+    top: 150px; */
+  }
+  .title{
+    font-weight: 700;
+  }
+  .inTitle{
+    width: 15vw;
+  }
