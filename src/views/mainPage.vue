@@ -18,7 +18,9 @@
           </ion-tab-button>
   
           <ion-tab-button tab="tab3" href="/main/achats">
-            <ion-icon aria-hidden="true" :icon="square" />
+            <!-- <ion-icon aria-hidden="true" :icon="square" /> -->
+            <Icon icon="arcticons:purchased-apps"     
+            inline="true" width="30" height="30"/>
             <ion-label>Achats</ion-label>
           </ion-tab-button>
   
