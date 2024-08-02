@@ -25,7 +25,9 @@
           </ion-tab-button>
   
           <ion-tab-button tab="tab4" href="/main/rotation">
-            <ion-icon aria-hidden="true" :icon="addOutline" />
+            <!-- <ion-icon aria-hidden="true" :icon="addOutline" /> -->
+            <Icon icon="hugeicons:recycle-01"      
+            width="30" height="30"/>
             <ion-label>Rotation</ion-label>
           </ion-tab-button>
   
