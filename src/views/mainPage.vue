@@ -11,7 +11,9 @@
           </ion-tab-button>
   
           <ion-tab-button tab="tab2" href="/main/vendu">
-            <ion-icon aria-hidden="true" :icon="ellipse"/>
+            <!-- <ion-icon aria-hidden="true" :icon="ellipse"/> -->
+            <Icon icon="ep:sold-out"    
+            inline="true" width="30" height="30"/>
             <ion-label>Vendu</ion-label>
           </ion-tab-button>
   
