@@ -1,1 +1,3 @@
 node_modules
+src/store/host.js
+src/views/hooks/host.js
