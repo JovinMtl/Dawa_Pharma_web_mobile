@@ -26,7 +26,7 @@
           
         </div>
         
-          <div class="cherc inTitle">
+          <div class="cherc inTitle" @click="turnDate2">
             <ion-icon :icon="calendarOutline" style="font-size: 2rem;
           font-weight: 700; margin: 0 10px;">
           </ion-icon>
@@ -146,10 +146,16 @@
   const pv_t = ref(0)
   const ben_t = ref(0)
   const date1 = ref(null)
+  const date2 = ref(null)
   const manDateTime = ref(null)
   const { getDate1, getDate2, setDate1, setDate2  } = useDateStore()
 
   const turnDate = ()=>{
+    manDateTime.value.firstChild.shadowRoot.firstChild.click()
+    console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
+    console.log("The date gotten : ", date1.value)
+  }
+  const turnDate2 = ()=>{
     manDateTime.value.firstChild.shadowRoot.firstChild.click()
     console.log(" REF holds: ", manDateTime.value.firstChild.shadowRoot.firstChild)
     console.log("The date gotten : ", date1.value)
